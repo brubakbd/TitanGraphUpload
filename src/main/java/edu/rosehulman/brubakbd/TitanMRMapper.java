@@ -30,6 +30,7 @@ public class TitanMRMapper extends Mapper<LongWritable, Text, Text, IntWritable>
 				conf.setProperty("cache.db-cache-clean-wait", 20);
 				conf.setProperty("cache.db-cache-time", 180000);
 				conf.setProperty("cache.db-cache-size", 0.5);
+				conf.setProperty("storage.hbase.compat-class", "com.thinkaurelius.titan.diskstorage.hbase.HBaseCompat1_0");
 		
 				
 		TitanGraph graph = TitanFactory.open(conf);
